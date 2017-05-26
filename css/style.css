@@ -1,0 +1,90 @@
+
+body,html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 10px;
+  overflow: hidden;
+}
+
+.backgroundImg {
+  position: fixed;
+  
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url(http://www.gesh.tv/wp-content/uploads/2015/10/music-visualizer-kit_ae_3_psy-ethno-1.jpg);
+  background-size: cover;
+
+  background-repeat: no-repeat;
+  
+}
+
+.keys {
+  display: flex;
+  position: relative;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.key {
+  display: inline-block;
+  border: .4rem solid black;
+  border-radius: .5rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem .5rem;
+  transition: all .07s ease;
+  width: 10rem;
+  text-align: center;
+  color: white;
+  background: black;
+  text-shadow: 0 0 .5rem #66FF00;
+}
+
+.playing {
+  transform: scale(1.1);
+  border-color: #66FF00;
+  box-shadow: 0 0 1rem #66FF00;
+}
+
+kbd {
+  display: block;
+  font-size: 4rem;
+}
+
+.sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: #66FF00;
+}
+
+.animate {
+  animation: my-animation 0.7s;
+}
+
+@keyframes my-animation {
+  0% {
+    transform: scale(1); 
+    filter: saturate(1);
+  }
+  
+  50% {
+    transform: scale(2);
+    filter: saturate(10);
+  }
+  
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 400px){
+  
+}
