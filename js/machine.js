@@ -14,6 +14,7 @@
     audio.currentTime = 0;
     audio.play();
     key.classList.add("playing");
+    background.classList.remove("animate-breathe");
     background.classList.add("animate");
   }
   
@@ -28,6 +29,7 @@
     }
     this.classList.remove("playing");
     background.classList.remove("animate");
+    background.classList.add("animate-breathe");
   }
   
   keys.forEach(key => {

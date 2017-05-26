@@ -5,6 +5,7 @@ body,html {
   font-family: sans-serif;
   font-size: 10px;
   overflow: hidden;
+  background-color: black;
 }
 
 .backgroundImg {
@@ -66,10 +67,14 @@ kbd {
 }
 
 .animate {
-  animation: my-animation 0.7s;
+  animation: enlarge 0.7s;
 }
 
-@keyframes my-animation {
+.animate-breathe {
+  animation: breathe 5s infinite;
+}
+
+@keyframes enlarge {
   0% {
     transform: scale(1); 
     filter: saturate(1);
@@ -84,6 +89,25 @@ kbd {
     transform: scale(1);
   }
 }
+
+
+@keyframes breathe {
+  0% {
+    filter: saturate(120%) contrast(120%);
+ 
+  }
+
+  50% {
+    filter: saturate(150%) contrast(150%);
+
+  }
+
+  100% {
+    filter: saturate(120%) contrast(120%);
+
+  }
+}
+
 
 @media screen and (max-width: 400px){
   
