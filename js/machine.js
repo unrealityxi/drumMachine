@@ -4,6 +4,7 @@
   const background = document.querySelector(".backgroundImg");
   function playSound(e){
     // Get the audio element corresponding to key
+    console.log(e);
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
     
@@ -18,6 +19,10 @@
     background.classList.add("animate");
   }
   
+  function removePlaying(e){
+      const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+      key.classList.remove("playing");
+  }
   
   // attach event listeners to end transitions
   const keys = document.querySelectorAll(".key");
@@ -32,8 +37,10 @@
     background.classList.add("animate-breathe");
   }
   
-  keys.forEach(key => {
+  window.addEventListener("keydown", playSound);
+  window.addEventListener("keyup", removePlaying);
+  keys.forEach(function (key) {
     key.addEventListener("transitionend", removeTransition);
   });
-  window.addEventListener("keydown", playSound);
+  
 })();
